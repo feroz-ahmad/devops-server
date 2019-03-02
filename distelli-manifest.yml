@@ -35,10 +35,11 @@ feroz29/node-sample-aws:
 
   PostInstall:
     - echo "Begin PostInstall"
+    - npm config set registry http://registry.npmjs.org
     - npm install
 
   Env:
-    - PORT: 3000
+    - PORT: "3000"
 
   Exec:
     - npm start

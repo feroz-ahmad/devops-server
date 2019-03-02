@@ -29,9 +29,9 @@ feroz29/node-sample-aws:
     - echo "-Updating apt-get-"
     - sudo apt-get -y update
     - echo "-Installing nodejs-"
-    - sudo apt-get -y install nodejs
+    - sudo apt-get -y install nodejs=10.15.1
     - echo "-Installing npm-"
-    - sudo apt-get -y install npm
+    - sudo apt-get -y install npm=6.4.1
 
   PostInstall:
     - echo "Begin PostInstall"

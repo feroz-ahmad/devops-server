@@ -32,10 +32,14 @@ feroz29/node-sample-aws:
     - sudo apt-get -y install nodejs=10.15.1
     - echo "-Installing npm-"
     - sudo apt-get -y install npm=6.4.1
+    - echo "#####################"
+    - node --version
+    - npm --version
 
   PostInstall:
     - echo "Begin PostInstall"
     - npm config set registry http://registry.npmjs.org
+    - npm config set strict-ssl false
     - npm install
 
   Env:

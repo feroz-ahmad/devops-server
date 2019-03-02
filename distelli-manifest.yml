@@ -9,9 +9,9 @@ feroz29/node-sample-aws:
     - echo "-Updating apt-get-"
     - sudo apt-get -y update
     - echo "-Installing nodejs-"
-    - sudo apt-get -y install nodejs=10.15.1
+    - sudo apt-get -y install nodejs
     - echo "-Installing npm-"
-    - sudo apt-get -y install npm=6.4.1
+    - sudo apt-get -y install npm
     - echo "----------------"
     - node --version
     - npm --version
@@ -34,9 +34,9 @@ feroz29/node-sample-aws:
     - echo "-Updating apt-get-"
     - sudo apt-get -y update
     - echo "-Installing nodejs-"
-    - sudo apt-get -y install nodejs=10.15.1
+    - sudo apt-get -y install nodejs
     - echo "-Installing npm-"
-    - sudo apt-get -y install npm=6.4.1
+    - sudo apt-get -y install npm
     - echo "----------------"
     - node --version
     - npm --version

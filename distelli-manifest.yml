@@ -1,32 +1,12 @@
 feroz29/node-sample-aws:
-  # Distelli Manifest example
-  # this example assumes the build and deploy servers are:
-  # Ubuntu 14.04
-
-  PreRelease:
-    - echo "---Beginning PreRelease---"
-    - echo "--Installing build dependencies--"
-    - echo "-Updating apt-get-"
-    - sudo apt-get -y update
-    - echo "-Installing nodejs-"
-    - sudo apt-get -y install nodejs
-    - echo "-Installing npm-"
-    - sudo apt-get -y install npm
-    - echo "----------------"
-    - node --version
-    - npm --version
-    - npm config set registry http://registry.npmjs.org
-    - npm config set strict-ssl false
-    - echo "--Building--"
-    - sudo npm install
+  Build:
+    - echo "---Building---"
+    - npm install
     - echo "--Testing--"
-    # - npm test
+    - npm test
 
   PkgInclude:
     - '*'
-
-  PkgExclude:
-    - node_modules/
 
   PreInstall:
     - echo "---Begining PreInstall---"
@@ -35,17 +15,9 @@ feroz29/node-sample-aws:
     - sudo apt-get -y update
     - echo "-Installing nodejs-"
     - sudo apt-get -y install nodejs
-    - echo "-Installing npm-"
-    - sudo apt-get -y install npm
-    - echo "----------------"
-    - node --version
-    - npm --version
 
   PostInstall:
     - echo "Begin PostInstall"
-    - npm config set registry http://registry.npmjs.org
-    - npm config set strict-ssl false
-    - npm install
 
   Env:
     - PORT: "3000"

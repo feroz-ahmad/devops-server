@@ -1,26 +1,2 @@
 feroz29/node-sample-aws:
-  Build:
-    - echo "---Building---"
-    - npm install
-    - echo "--Testing--"
-    - npm test
-
-  PkgInclude:
-    - '*'
-
-  PreInstall:
-    - echo "---Begining PreInstall---"
-    - echo "--Installing deploy dependencies--"
-    - echo "-Updating apt-get-"
-    - sudo apt-get -y update
-    - echo "-Installing nodejs-"
-    - sudo apt-get -y install nodejs
-
-  PostInstall:
-    - echo "Begin PostInstall"
-
-  Env:
-    - PORT: "3000"
-
-  Exec:
-    - npm start
+  BuildWith: Travis

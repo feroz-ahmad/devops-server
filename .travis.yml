@@ -14,3 +14,16 @@ cache:
 
 script:
   - npm test
+
+before_deploy:
+- cd ..
+- tar -zcf ${TRAVIS_BUILD_DIR}${REPO}-${BUILD_ENV}-${TRAVIS_TAG}-${TRAVIS_BUILD_NUMBER}.tar.gz ${REPO}
+
+deploy:
+  # GitHub - Add zip to release
+  - provider: releases
+    api_key: ${GIT_API_KEY}
+    file: ${TRAVIS_BUILD_DIR}${REPO}-${BUILD_ENV}-${TRAVIS_TAG}-${TRAVIS_BUILD_NUMBER}.tar.gz
+    skip_cleanup: true
+    on:
+      tags: true

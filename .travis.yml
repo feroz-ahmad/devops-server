@@ -16,16 +16,14 @@ script:
   - npm test
 
 before_deploy:
-  - cd ..
-  - tar -zcf ${TRAVIS_BUILD_DIR}${REPO}-${BUILD_ENV}-${TRAVIS_TAG}-${TRAVIS_BUILD_NUMBER}.tar.gz ${REPO}
-  - git config --local user.name "${GITUSERNAME}"
-  - git config --local user.email "${GITUSERMAIL}"
-  - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
-  - git tag $TRAVIS_TAG
+  - tar czvf build.tar.gz -C public .
 
 deploy:
   # GitHub - Add zip to release
   - provider: releases
     api_key: ${GIT_API_KEY}
-    file: ${TRAVIS_BUILD_DIR}${REPO}-${BUILD_ENV}-${TRAVIS_TAG}-${TRAVIS_BUILD_NUMBER}.tar.gz
+    file: "./build.tar.gz"
     skip_cleanup: true
+    on:
+      tags: true
+      branch: master

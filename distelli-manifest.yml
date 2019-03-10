@@ -3,7 +3,8 @@ feroz29/node-sample-aws:
     - PORT: "3000"
 
   PreRelease:
-  #   - echo "---Beginning PreRelease---"
+    - echo "---Beginning PreRelease---"
+    - echo "---##Nothing to do##---"
   #   - echo "--Installing build dependencies--"
   #   - echo "-Updating apt-get-"
   #   - sudo apt-get -y update
@@ -27,7 +28,6 @@ feroz29/node-sample-aws:
   #   - node_modules/
 
   PreInstall:
-    - touch ~/wearestarting.txt
     - echo "---Begining PreInstall---"
     - echo "--Installing deploy dependencies--"
     - echo "-Updating apt-get-"
@@ -35,12 +35,9 @@ feroz29/node-sample-aws:
     - echo "-Installing nodejs-"
     - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
     - sudo apt-get -y install nodejs
-    # - echo "-Installing npm-"
-    # - sudo apt-get -y install npm
     - echo "----------------"
     - node --version
     - npm --version
-    - touch ~/weran.txt
 
   PostInstall:
     - echo "Begin PostInstall"

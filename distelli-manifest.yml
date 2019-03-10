@@ -1,5 +1,8 @@
+# https://puppet.com/docs/pipelines-for-apps/enterprise/manifest.html#
 feroz29/node-sample-aws:
   BuildWith: Travis
+  Env:
+    - PORT: "3000"
 
   PreInstall:
     - echo "---Begining PreInstall---"
@@ -19,9 +22,6 @@ feroz29/node-sample-aws:
     - npm config set registry http://registry.npmjs.org
     - npm config set strict-ssl false
     - npm install
-
-  Env:
-    - PORT: "3000"
 
   Exec:
     - npm start

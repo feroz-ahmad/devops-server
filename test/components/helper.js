@@ -24,7 +24,7 @@ describe('helper', function() {
         });
         it('check for one', function(done){
             let val = helper.squareRoot(1);
-            expect(val).to.equal(0);
+            expect(val).to.equal(1);
             done();
         });
     });

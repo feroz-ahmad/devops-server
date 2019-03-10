@@ -2,22 +2,23 @@ feroz29/node-sample-aws:
   Env:
     - PORT: "3000"
 
-  PreRelease:
-    - echo "---Beginning PreRelease---"
-    - echo "--Installing build dependencies--"
-    - echo "-Updating apt-get-"
-    - sudo apt-get -y update
-    - echo "-Installing nodejs-"
-    - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-    - sudo apt-get -y install nodejs
-    - echo "-Installing npm-"
-    - sudo apt-get -y install npm
-    - echo "----------------"
-    - node --version
-    - npm --version
-    - echo "--Building--"
-    - sudo npm install
-    - echo "--Testing--"
+  # PreRelease:
+  #   - echo "---Beginning PreRelease---"
+  #   - echo "--Installing build dependencies--"
+  #   - echo "-Updating apt-get-"
+  #   - sudo apt-get -y update
+  #   - echo "-Installing nodejs-"
+  #   - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+  #   - sudo apt-get -y install nodejs
+  #   - echo "-Installing npm-"
+  #   - sudo apt-get -y install npm
+  #   - echo "----------------"
+  #   - node --version
+  #   - npm --version
+  #   - echo "--Building--"
+  #   - sudo npm install
+  #   - echo "--Testing--"
+    # - npm test
 
   PkgInclude:
     - '*'

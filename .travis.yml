@@ -26,3 +26,9 @@ deploy:
     skip_cleanup: true
     on:
       branch: master
+
+after_success:
+  - cp -f distelli.yml ~/
+  - wget -qO- https://pipelines.puppet.com/download/client | sh
+  - /usr/local/bin/distelli login -conf ~/distelli.yml
+  - /usr/local/bin/distelli deploy -q -y -m "Deployment from Travis-CI" --env dev

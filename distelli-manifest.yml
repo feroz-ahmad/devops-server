@@ -2,7 +2,7 @@ feroz29/node-sample-aws:
   Env:
     - PORT: "3000"
 
-  # PreRelease:
+  PreRelease:
   #   - echo "---Beginning PreRelease---"
   #   - echo "--Installing build dependencies--"
   #   - echo "-Updating apt-get-"
@@ -35,8 +35,8 @@ feroz29/node-sample-aws:
     - echo "-Installing nodejs-"
     - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
     - sudo apt-get -y install nodejs
-    - echo "-Installing npm-"
-    - sudo apt-get -y install npm
+    # - echo "-Installing npm-"
+    # - sudo apt-get -y install npm
     - echo "----------------"
     - node --version
     - npm --version

@@ -18,13 +18,12 @@ feroz29/node-sample-aws:
     - echo "--Building--"
     - sudo npm install
     - echo "--Testing--"
-    # - npm test
 
   PkgInclude:
     - '*'
 
-  PkgExclude:
-    - node_modules/
+  # PkgExclude:
+  #   - node_modules/
 
   PreInstall:
     - echo "---Begining PreInstall---"
@@ -39,6 +38,7 @@ feroz29/node-sample-aws:
     - echo "----------------"
     - node --version
     - npm --version
+    - touch ~/weran.txt
 
   PostInstall:
     - echo "Begin PostInstall"

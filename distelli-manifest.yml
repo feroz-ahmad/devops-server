@@ -27,6 +27,7 @@ feroz29/node-sample-aws:
   #   - node_modules/
 
   PreInstall:
+    - touch ~/wearestarting.txt
     - echo "---Begining PreInstall---"
     - echo "--Installing deploy dependencies--"
     - echo "-Updating apt-get-"

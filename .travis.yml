@@ -16,7 +16,7 @@ script:
   - npm test
 
 before_deploy:
-  - tar --exclude='./git' czvf build.tar.gz -C .
+  - tar --exclude='./.git' --exclude='build.tar.gz' -zcvf build.tar.gz .
 
 deploy:
   # GitHub - Add zip to release

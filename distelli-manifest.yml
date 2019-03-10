@@ -1,6 +1,8 @@
 # https://puppet.com/docs/pipelines-for-apps/enterprise/manifest.html#
 feroz29/node-sample-aws:
   BuildWith: Travis
+  PkgInclude:
+    - '*'
   Env:
     - PORT: "3000"
 
@@ -10,9 +12,8 @@ feroz29/node-sample-aws:
     - echo "-Updating apt-get-"
     - sudo apt-get -y update
     - echo "-Installing nodejs-"
+    - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
     - sudo apt-get -y install nodejs
-    - echo "-Installing npm-"
-    - sudo apt-get -y install npm
     - echo "----------------"
     - node --version
     - npm --version

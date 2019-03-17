@@ -1,3 +1,5 @@
+#!/bin/bash
+cd $TRAVIS_BUILD_DIR/project
 echo "-- Deploying to Puppet --"
 wget -qO- https://pipelines.puppet.com/download/client | sh
 echo "DistelliAccessToken:" " '$DistelliAccessToken'" >> ~/distelli.yml

@@ -4,9 +4,10 @@ feroz29/node-sample-aws:
 
   PreRelease:
     - echo "---Beginning PreRelease---"
-    - echo "---##Nothing to do##---"
+    - echo "---\\ Nothing to do //---"
 
   PkgInclude:
+    - echo "--- Packaging ---"
     - '*'
 
   # PkgExclude:
@@ -29,4 +30,5 @@ feroz29/node-sample-aws:
     - npm install
 
   Exec:
+    - echo "---\\ Starting the server //---"
     - npm start

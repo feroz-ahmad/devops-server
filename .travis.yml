@@ -18,7 +18,7 @@ script:
 
 after_success:
   - provider: script
-    script: bash travis-scripts/deploy_to_puppet.sh
+    script: bash ./travis-scripts/deploy_to_puppet.sh
     on:
       branch: master
 

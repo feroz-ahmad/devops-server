@@ -1,3 +1,4 @@
+if: branch = master
 language: node_js
 node_js:
   - '10'
@@ -16,18 +17,15 @@ script:
   - npm test
 
 after_success:
-  # Deploy to server using Puppet
-  - wget -qO- https://pipelines.puppet.com/download/client | sh
-  - echo "DistelliAccessToken:" " '$DistelliAccessToken'" >> ~/distelli.yml
-  - echo "DistelliSecretKey:" "'$DistelliSecretKey'" >> ~/distelli.yml
-  - /usr/local/bin/distelli login -conf ~/distelli.yml
-  - /usr/local/bin/distelli deploy -q -y -m "Deployment from Travis-CI" --env dev
+  - provider: script
+    script: bash travis-scripts/deploy_to_puppet.sh
+    on:
+      branch: master
 
 before_deploy:
   - tar -zcvf build.tar.gz public
 
 deploy:
-  # GitHub - Add zip to release
   - provider: releases
     api_key: ${GIT_API_KEY}
     file: "./build.tar.gz"
